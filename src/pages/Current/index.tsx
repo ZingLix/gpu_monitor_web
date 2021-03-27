@@ -8,6 +8,7 @@ import { StateType } from './model';
 import { NodeInfo, Response, GPUInfo } from './data'
 import { Area, Line } from '@ant-design/charts';
 import moment from 'moment';
+import { PageContainer } from '@ant-design/pro-layout';
 
 const { Search } = Input;
 const { Option } = Select;
@@ -44,7 +45,7 @@ function GPUMonitor() {
     width: '25%',
     textAlign: 'center' as const,
   };
-  return <Card>
+  return <PageContainer><Card>
     {
       Object.keys(data).map((k, i) => (
         <Card title={k}>
@@ -73,7 +74,7 @@ function GPUMonitor() {
       ))
     }
 
-  </Card >
+  </Card ></PageContainer>
 }
 
 
