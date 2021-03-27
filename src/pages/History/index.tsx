@@ -7,7 +7,6 @@ import { Area, Line } from '@ant-design/charts';
 import moment from 'moment';
 import { ColumnsType } from 'antd/lib/table/interface';
 import { PageContainer } from '@ant-design/pro-layout';
-import { dynamic } from 'umi';
 
 const { Panel } = Collapse;
 const { TabPane } = Tabs;
@@ -219,7 +218,7 @@ const NodePanel: React.FC<{ name: string, node: NodeInfo[] }> = ({ name, node })
   )
 }
 
-function GPUMonitor() {
+function HistoryUsage() {
   const [data, setData] = useState<Response>({});
   useEffect(() => {
     asyncFetch();
@@ -256,11 +255,4 @@ function GPUMonitor() {
 
 
 
-export default GPUMonitor;
-// export default dynamic({
-//   loader: async function () {
-//     // 这里的注释 webpackChunkName 可以指导 webpack 将该组件 HugeA 以这个名字单独拆出去
-//     const { default: GPUMonitor } = await import(/* webpackChunkName: "external_A" */ './History');
-//     return GPUMonitor;
-//   },
-// });
+export default HistoryUsage;
