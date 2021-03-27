@@ -3,23 +3,12 @@ import { Divider, Card, Row, Col, Form, Table, Select, Switch, Input, message, S
 import React, { useState, useEffect } from 'react';
 
 import { Dispatch } from 'redux';
-import { FormComponentProps } from '@ant-design/compatible/es/form';
 import { StateType } from './model';
 import { NodeInfo, Response, GPUInfo } from './data'
-import { Area, Line } from '@ant-design/charts';
-import moment from 'moment';
+
 import { PageContainer } from '@ant-design/pro-layout';
 
-const { Search } = Input;
-const { Option } = Select;
-
-const { confirm } = Modal;
-
-
-
-
-
-function GPUMonitor() {
+function CurrentUsage() {
   const [data, setData] = useState<Response>({});
   useEffect(() => {
     asyncFetch();
@@ -79,4 +68,4 @@ function GPUMonitor() {
 
 
 
-export default GPUMonitor;
+export default CurrentUsage;

@@ -7,6 +7,7 @@ import { Area, Line } from '@ant-design/charts';
 import moment from 'moment';
 import { ColumnsType } from 'antd/lib/table/interface';
 import { PageContainer } from '@ant-design/pro-layout';
+import { dynamic } from 'umi';
 
 const { Panel } = Collapse;
 const { TabPane } = Tabs;
@@ -134,7 +135,7 @@ const GPUPanel: React.FC<{ info: { gpu: GPUInfo, time: string }[] }> = ({ info }
   }
   console.log(zombie)
   return (
-    <Row style={{ height: "220px", margin: "20px 0 20px 0" }} justify="space-around" align="middle">
+    <Row style={{ margin: "20px 0 20px 0" }} justify="space-around" align="middle">
       <Col span={4} >
         {zombie &&
           <Tooltip title="疑似显存被占用但长时间没有使用">
@@ -256,3 +257,10 @@ function GPUMonitor() {
 
 
 export default GPUMonitor;
+// export default dynamic({
+//   loader: async function () {
+//     // 这里的注释 webpackChunkName 可以指导 webpack 将该组件 HugeA 以这个名字单独拆出去
+//     const { default: GPUMonitor } = await import(/* webpackChunkName: "external_A" */ './History');
+//     return GPUMonitor;
+//   },
+// });

@@ -1,11 +1,4 @@
 ﻿export default [
-
-  {
-    path: '/history',
-    name: 'history',
-    icon: 'smile',
-    component: './History',
-  },
   {
     path: '/current',
     name: 'current',
@@ -13,8 +6,14 @@
     component: './Current',
   },
   {
+    path: '/history',
+    name: 'history',
+    icon: 'smile',
+    component: './History',
+  },
+  {
     path: '/',
-    redirect: '/history',
+    redirect: '/current',
   },
   {
     component: './404',
